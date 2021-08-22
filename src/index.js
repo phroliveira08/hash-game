@@ -13,24 +13,6 @@ function Square(props) {
   )
 }
 
-function EmojisButton(){
-  const emojis = [0x1F600, 0x1F604, 0x1F34A, 0x1F344, 0x1F37F, 0x1F363, 0x1F370, 0x1F355,
-    0x1F354, 0x1F35F, 0x1F6C0, 0x1F48E, 0x1F5FA, 0x23F0, 0x1F579, 0x1F4DA,
-    0x1F431, 0x1F42A, 0x1F439, 0x1F424];
-  return (
-    <div className='emojisArea'>
-      {emojis.map(n => (
-        <button onClick={() => {
-          let texto = document.getElementById('testeInput').value
-          texto += String.fromCodePoint(n)
-          document.getElementById('testeInput').value = texto
-          console.log(texto)
-        }}>{String.fromCodePoint(n)}</button>
-      ))}
-    </div>
-  )
-}
-
 class Board extends React.Component {
   constructor(props) {
     super(props)
@@ -105,9 +87,6 @@ class Game extends React.Component {
           <div>{/* status */}</div>
           <ol>{/* TODO */}</ol>
         </div>
-        <textarea id='testeInput'></textarea>
-        <button>teste</button>
-        <EmojisButton></EmojisButton>
       </div>
     );
   }
